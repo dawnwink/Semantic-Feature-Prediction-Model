@@ -19,7 +19,7 @@ from sklearn.feature_extraction.text import  TfidfVectorizer
 import nltk
 
 pro = 'Eclipse UI'
-'''加载数据集，切分数据集80%训练，20%测试'''
+
 movie_reviews = load_files(r'D:\effort-awareness\Tomcat project\3sub\tf_idf\%s\endata'%pro) 
 target = []
 data = [] 
@@ -43,7 +43,7 @@ for runtime in range(test_time):
     for i in range(len(trainset)):
         trainset_s[i] = ''.join(trainset[i]) 
     #print doc_terms_train
-    '''BOOL型特征下的向量空间模型，注意，测试样本调用的是transform接口'''
+   
     count_vec = TfidfVectorizer(binary = False, decode_error = 'ignore',\
                                 stop_words = 'english')
     x_train = count_vec.fit_transform(trainset_s)
