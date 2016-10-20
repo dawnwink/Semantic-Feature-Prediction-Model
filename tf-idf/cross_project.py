@@ -11,7 +11,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.feature_extraction.text import  TfidfVectorizer
 import nltk
 
-'''加载数据集，切分数据集80%训练，20%测试'''
+
 train_project = 'Birt raw'
 project_list = ['tomcat raw','swt raw','AspectJ','JDT','Eclipse UI']
 precise = []
@@ -48,7 +48,7 @@ for pro in project_list:
         for i in range(len(trainset)):
             trainset_s[i] = ''.join(trainset[i]) 
         #print doc_terms_train
-        '''BOOL型特征下的向量空间模型，注意，测试样本调用的是transform接口'''
+        
         count_vec = TfidfVectorizer(binary = False, decode_error = 'ignore',\
                                     stop_words = 'english')
         x_train = count_vec.fit_transform(trainset_s)
